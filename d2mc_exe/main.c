@@ -49,27 +49,27 @@ BOOL inject_dll(HANDLE proc, const char *dll_path, DWORD timeout)
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
     STARTUPINFOA si;
-	PROCESS_INFORMATION pi;
+    PROCESS_INFORMATION pi;
 
-	si.cb = sizeof(si);
+    si.cb = sizeof(si);
 
-	if(FALSE == CreateProcessA(NULL, COMMANDLINE, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi))
-	{
-		MessageBoxA(NULL, "CreateProcessA failed", COMMANDLINE, MB_ICONERROR);
-		return 1;
-	}
+    if (FALSE == CreateProcessA(NULL, COMMANDLINE, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi))
+    {
+        MessageBoxA(NULL, "CreateProcessA failed", COMMANDLINE, MB_ICONERROR);
+        return 1;
+    }
 
-	if(FALSE == inject_dll(pi.hProcess, DLL_NAME, 0))
-	{
-		MessageBoxA(NULL, "Failed to inject " DLL_NAME, "DLL Injection Failed", MB_ICONERROR);
-		return 1;
-	}
+    if (FALSE == inject_dll(pi.hProcess, DLL_NAME, 0))
+    {
+        MessageBoxA(NULL, "Failed to inject " DLL_NAME, "DLL Injection Failed", MB_ICONERROR);
+        return 1;
+    }
 
-	ResumeThread(pi.hThread);
+    ResumeThread(pi.hThread);
 
-	CloseHandle(pi.hProcess);
-	CloseHandle(pi.hThread);
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
 
-	return 0;
+    return 0;
 }
 

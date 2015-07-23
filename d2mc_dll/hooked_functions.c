@@ -26,7 +26,7 @@ VOID hook_hotpatch_x86(void *old_proc, const void *new_proc, void **orig_proc)
     {
         *orig_proc = ((BYTE *)old_proc) + 2;
     }
-    
+
     VirtualProtect(long_jmp, 7, old_protect, &old_protect);
 }
 
@@ -34,8 +34,8 @@ void hooked_functions_initialize(void)
 {
     HANDLE hKernel = GetModuleHandleA("kernel32");
 
-    hook_hotpatch_x86(GetProcAddress(hKernel, "FindWindowA"), 
-        hooked_FindWindowA, 
+    hook_hotpatch_x86(GetProcAddress(hKernel, "FindWindowA"),
+        hooked_FindWindowA,
         (void **)&orig_FindWindowA);
 }
 
@@ -46,6 +46,6 @@ HANDLE WINAPI hooked_FindWindowA(LPCSTR a1, LPCSTR a2)
         return NULL;
     }
 
-	return orig_FindWindowA(a1, a2);
+    return orig_FindWindowA(a1, a2);
 }
 
