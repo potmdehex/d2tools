@@ -2,7 +2,7 @@
 ![Screenshot](https://github.com/potmdehex/d2tools/blob/master/d2heroedit/screenshot.png)
 
 Tools and libraries for Diablo II by John Åkerblom ([@potmdehex](https://twitter.com/potmdehex))
-and Kamran Poursohrab. Includes a save file editor along with its underlying library as well
+and Kamran Poursohrab 2013. Includes a save file editor along with its underlying library as well
 as a multiclient tool.
 
 ### Download binaries
