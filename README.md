@@ -1,6 +1,7 @@
-## d2tools – Tools for Diablo II
+## d2tools â€“ Tools for Diablo II
+![Screenshot](https://github.com/potmdehex/d2tools/blob/master/d2heroedit/screenshot.png)
 
-Tools and libraries for Diablo II by John Åkerblom ([@potmdehex](https://twitter.com/potmdehex))
+Tools and libraries for Diablo II by John Ã…kerblom ([@potmdehex](https://twitter.com/potmdehex))
 and Kamran Poursohrab.
 
 ### Download binaries
