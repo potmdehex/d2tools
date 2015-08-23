@@ -3,7 +3,7 @@
 #ifndef __HOOKED_FUNCTIONS_H_DEF__
 #define __HOOKED_FUNCTIONS_H_DEF__
 
-void hooked_functions_initialize(void);
+void hooked_functions_init(void);
 
 #endif
 

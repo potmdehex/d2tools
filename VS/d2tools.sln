@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d2heroedit", "..\d2heroedit\VS\d2heroedit.vcxproj", "{378E5F88-F252-41C5-94EE-5380450CD69A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{739860DB-1939-4EB0-A3B6-D7C41B4630F4} = {739860DB-1939-4EB0-A3B6-D7C41B4630F4}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d2mc_dll", "..\d2mc\d2mc_dll\VS\d2mc_dll.vcxproj", "{2CCF9E4A-838D-4E05-9850-FD64D90C0DB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d2mc_exe", "..\d2mc\d2mc_exe\VS\d2mc_exe.vcxproj", "{3F957F6F-CD50-4644-A911-E456B58EA2EB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d2savelib", "..\d2savelib\VS\d2savelib.vcxproj", "{739860DB-1939-4EB0-A3B6-D7C41B4630F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{378E5F88-F252-41C5-94EE-5380450CD69A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{378E5F88-F252-41C5-94EE-5380450CD69A}.Debug|Win32.Build.0 = Debug|Win32
+		{378E5F88-F252-41C5-94EE-5380450CD69A}.Release|Win32.ActiveCfg = Release|Win32
+		{378E5F88-F252-41C5-94EE-5380450CD69A}.Release|Win32.Build.0 = Release|Win32
+		{2CCF9E4A-838D-4E05-9850-FD64D90C0DB8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2CCF9E4A-838D-4E05-9850-FD64D90C0DB8}.Debug|Win32.Build.0 = Debug|Win32
+		{2CCF9E4A-838D-4E05-9850-FD64D90C0DB8}.Release|Win32.ActiveCfg = Release|Win32
+		{2CCF9E4A-838D-4E05-9850-FD64D90C0DB8}.Release|Win32.Build.0 = Release|Win32
+		{3F957F6F-CD50-4644-A911-E456B58EA2EB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3F957F6F-CD50-4644-A911-E456B58EA2EB}.Debug|Win32.Build.0 = Debug|Win32
+		{3F957F6F-CD50-4644-A911-E456B58EA2EB}.Release|Win32.ActiveCfg = Release|Win32
+		{3F957F6F-CD50-4644-A911-E456B58EA2EB}.Release|Win32.Build.0 = Release|Win32
+		{739860DB-1939-4EB0-A3B6-D7C41B4630F4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{739860DB-1939-4EB0-A3B6-D7C41B4630F4}.Debug|Win32.Build.0 = Debug|Win32
+		{739860DB-1939-4EB0-A3B6-D7C41B4630F4}.Release|Win32.ActiveCfg = Release|Win32
+		{739860DB-1939-4EB0-A3B6-D7C41B4630F4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

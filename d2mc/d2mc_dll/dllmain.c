@@ -9,7 +9,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     switch (fdwReason)
     {
     case DLL_PROCESS_ATTACH:
-        hooked_functions_initialize();
+        hooked_functions_init();
         break;
     case DLL_PROCESS_DETACH:
         break;

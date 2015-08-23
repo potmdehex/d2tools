@@ -22,15 +22,14 @@ VOID hook_hotpatch_x86(void *old_proc, const void *new_proc, void **orig_proc)
     *long_jmpaddr = ((DWORD)new_proc) - ((DWORD)old_proc);
     *back_jmp = 0xF9EB; // short jmp back -7 (back 5, plus two for this jmp)
 
-    if (NULL != orig_proc)
-    {
+    if (NULL != orig_proc) {
         *orig_proc = ((BYTE *)old_proc) + 2;
     }
 
     VirtualProtect(long_jmp, 7, old_protect, &old_protect);
 }
 
-void hooked_functions_initialize(void)
+void hooked_functions_init(void)
 {
     HANDLE hKernel = GetModuleHandleA("kernel32");
 
@@ -41,8 +40,7 @@ void hooked_functions_initialize(void)
 
 HANDLE WINAPI hooked_FindWindowA(LPCSTR a1, LPCSTR a2)
 {
-    if (0 == lstrcmpA(a1, "Diablo II"))
-    {
+    if (0 == lstrcmpA(a1, "Diablo II")) {
         return NULL;
     }
 

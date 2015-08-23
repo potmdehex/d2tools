@@ -1,11 +1,14 @@
-#### Description
-Diablo 2 multiclient tool. Allows several instances of Diablo 2 to be run
-simultaneously. No CRT used, compiles to ~4KB .exe and ~3KB .dll
+## d2tools – Tools for Diablo II
 
-#### How to use
-1. Place exe and dll in Diablo II folder
-2. Start exe, which will launch a new Diablo II instance even if there are
-other running instances
+Tools and libraries for Diablo II by John Åkerblom ([@potmdehex](https://twitter.com/potmdehex))
+and Kamran Poursohrab.
+
+### Download binaries
+Pre-built binaries available [here](https://github.com/potmdehex/d2tools/releases).
+
+### MSVC build instructions
+ * Open d2tools\VS\d2tools.sln
+ * Build
 
 ### Disclaimer
 This software is not official and is not endorsed by anyone.

@@ -2,6 +2,7 @@
 
 #include <windows.h>
 
+// -w for windowed, -ns for no sound
 #define COMMANDLINE "Game.exe -w -ns"
 #define DLL_NAME	"d2mc.dll"
 
@@ -15,8 +16,7 @@ BOOL inject_dll(HANDLE proc, const char *dll_path, DWORD timeout)
     HMODULE kernel32 = GetModuleHandleA("Kernel32");
 
     if (NULL == (remote_path = VirtualAllocEx(proc, NULL, strlen(dll_path) + 1,
-        MEM_COMMIT, PAGE_READWRITE)))
-    {
+            MEM_COMMIT, PAGE_READWRITE))) {
         return FALSE;
     }
 
@@ -24,16 +24,13 @@ BOOL inject_dll(HANDLE proc, const char *dll_path, DWORD timeout)
         NULL);
 
     if (NULL == (thread = CreateRemoteThread(proc, NULL, 0,
-        (LPTHREAD_START_ROUTINE)GetProcAddress(kernel32, "LoadLibraryA"),
-        remote_path, 0, NULL)))
-    {
+            (LPTHREAD_START_ROUTINE)GetProcAddress(kernel32, "LoadLibraryA"),
+        remote_path, 0, NULL))) {
         return FALSE;
     }
 
-    if (0 != timeout)
-    {
-        if (WAIT_TIMEOUT == WaitForSingleObject(thread, timeout))
-        {
+    if (0 != timeout) {
+        if (WAIT_TIMEOUT == WaitForSingleObject(thread, timeout)) {
             CloseHandle(thread);
             return FALSE;
         }
@@ -53,14 +50,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     si.cb = sizeof(si);
 
-    if (FALSE == CreateProcessA(NULL, COMMANDLINE, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi))
-    {
+    if (FALSE == CreateProcessA(NULL, COMMANDLINE, NULL, NULL, FALSE, 
+            CREATE_SUSPENDED, NULL, NULL, &si, &pi)) {
         MessageBoxA(NULL, "CreateProcessA failed", COMMANDLINE, MB_ICONERROR);
         return 1;
     }
 
-    if (FALSE == inject_dll(pi.hProcess, DLL_NAME, 0))
-    {
+    if (FALSE == inject_dll(pi.hProcess, DLL_NAME, 0)) {
         MessageBoxA(NULL, "Failed to inject " DLL_NAME, "DLL Injection Failed", MB_ICONERROR);
         return 1;
     }

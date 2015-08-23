@@ -1,0 +1,1 @@
+To avoid copyright issues, empty placeholder files are placed here. d2heroedit can be built and used with these placeholder files.

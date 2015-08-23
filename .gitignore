@@ -10,3 +10,5 @@
 *.opensdf
 *.sdf
 *.dll
+*.lib
+*.res
